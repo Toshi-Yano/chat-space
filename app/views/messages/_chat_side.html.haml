@@ -2,13 +2,13 @@
   .chat-side__user
     .chat-side__user__box
       %p.chat-side__user__box__name
-        q
+        = current_user.name
       %ul.chat-side__user__box__icons
         %li.chat-side__user__box__icons__new
           = link_to "#", class: "chat-side__user__box__icons__new" do
             = icon('far', 'edit', class: "icons__btn__new")
         %li.chat-side__user__box__icons__edit
-          = link_to "#", class: "chat-side__user__box__icons__edit" do
+          = link_to edit_user_path(current_user), class: "chat-side__user__box__icons__edit" do
             = icon('fas', 'cog', class: 'icons__btn__edit')
 
   .chat-side__lists
