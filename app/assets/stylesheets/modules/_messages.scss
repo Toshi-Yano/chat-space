@@ -145,6 +145,7 @@ $pure-white: #ffffff;
           width: 100%;
           display: flex;
           align-items: center;
+          position: relative;
           .input-message {
             height: 50px;
             width: 930px;
@@ -153,12 +154,11 @@ $pure-white: #ffffff;
             padding-right: 40px;
             padding-left: 10px;
             border-style: none;
-            position: relative;
           }
           .input-image {
             position: absolute;
-            right: 170px;
-            bottom: 26px;
+            right: 40px;
+            top: 7px;
             font-size: 25px;
             .file-btn {
               display: none;
