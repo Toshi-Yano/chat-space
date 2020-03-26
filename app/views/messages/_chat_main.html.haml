@@ -51,9 +51,10 @@
         hello
 
   .chat-main__form
-    .chat-main__form__input
-      %input{type: "text", placeholder: "type a message", class: "input-message"}
-      %label{class: "input-image"}
-        = icon('fas', 'image')
-        %input{type: "file", class: "file-btn"}
-    %input{type: "submit", value: "send", class: "submit-btn"}
+    %form
+      .chat-main__form__input
+        %input{type: "text", placeholder: "type a message", class: "input-message"}
+        %label{class: "input-image"}
+          = icon('fas', 'image')
+          %input{type: "file", class: "file-btn"}
+      %input{type: "submit", value: "send", class: "submit-btn"}
