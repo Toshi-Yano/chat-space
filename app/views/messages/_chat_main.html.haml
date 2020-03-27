@@ -2,59 +2,23 @@
   .chat-main__group
     .chat-main__group__left
       %p.chat-main__group__left__group-name
-        グループ名
+        = @group.name
       %p.chat-main__group__left__group-list
-        メンバー一覧
+        Member : 
+        - @group.users.each do |user|
+          = user.name
     .chat-main__group__right
-      = link_to "Edit", "#" , class: "edit-btn"
+      = link_to "Edit", edit_group_path(@group) , class: "edit-btn"
 
   .chat-main__list
-    .chat-main__list__top
-      %p.chat-main__list__top__name
-        q
-      %p.chat-main__list__top__date
-        2020/03/25(Wed) 16:46:34
-    .chat-main__list__text
-      %p.chat-main__list__text
-        hello
-    .chat-main__list__top
-      %p.chat-main__list__top__name
-        q
-      %p.chat-main__list__top__date
-        2020/03/25(Wed) 16:46:34
-    .chat-main__list__text
-      %p.chat-main__list__text
-        hello
-    .chat-main__list__top
-      %p.chat-main__list__top__name
-        q
-      %p.chat-main__list__top__date
-        2020/03/25(Wed) 16:46:34
-    .chat-main__list__text
-      %p.chat-main__list__text
-        hello
-    .chat-main__list__top
-      %p.chat-main__list__top__name
-        q
-      %p.chat-main__list__top__date
-        2020/03/25(Wed) 16:46:34
-    .chat-main__list__text
-      %p.chat-main__list__text
-        hello
-    .chat-main__list__top
-      %p.chat-main__list__top__name
-        q
-      %p.chat-main__list__top__date
-        2020/03/25(Wed) 16:46:34
-    .chat-main__list__text
-      %p.chat-main__list__text
-        hello
+    = render @messages
 
   .chat-main__form
-    %form
+    = form_for [@group, @message] do |f|
       .chat-main__form__input
-        %input{type: "text", placeholder: "type a message", class: "input-message"}
-        %label{class: "input-image"}
-          = icon('fas', 'image')
-          %input{type: "file", class: "file-btn"}
-      %input{type: "submit", value: "send", class: "submit-btn"}
+        = f.text_field :content, class: 'input-message', placeholder: 'type a message'
+        .input-image
+          = f.label :image, class: 'input-image' do
+            = icon('fas', 'image')
+            = f.file_field :image, class: 'file-btn'
+      = f.submit 'send', class: 'submit-btn'
