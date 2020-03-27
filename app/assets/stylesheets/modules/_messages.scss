@@ -13,6 +13,7 @@ $pure-white: #ffffff;
     height: 100vh;
     width: 300px;
     background-color: #253141;
+    overflow: scroll;
     &__user {
       height: 100px;
       display: flex;
@@ -112,6 +113,7 @@ $pure-white: #ffffff;
       padding-top: 35px;
       padding-left: 40px;
       background-color: #fafafa;
+      overflow: scroll;
       &__top {
         display: flex;
         &__name {
