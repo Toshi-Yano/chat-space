@@ -1,41 +1,41 @@
 $(function(){
 
-  var upp = function(upper) {
-    var upper = `<div class="chat-main__list__top">` +
-              `<div class="chat-main__list__top__name">` +
-              message.user_name +
-              `</div>` +
-              `<div class="chat-main__list__top__date">` +
-              message.created_at +
-              `</div>` +
-              `</div>`
+  function upper(message) {
+    var upper_message = `<div class="chat-main__list__top">` +
+                        `<div class="chat-main__list__top__name">` +
+                        message.user_name +
+                        `</div>` +
+                        `<div class="chat-main__list__top__date">` +
+                        message.created_at +
+                        `</div>` +
+                        `</div>`;
+    return upper_message;
   };
 
   function buildHTML(message){
-    $(function(upper) {
+      var upp = upper(message);
     if (message.content && message.image) {
-    var html =  upper + 
-                `<div class="chat-main__list__text">` +
-                `<p class="chat-main__list__text">` +              
-                message.content +
-                `</p>` +
-                `<img src="` + message.image + `"chat-main__list__image" >` +
-                `</div>`
+      html = upp + 
+            `<div class="chat-main__list__text">` +
+            `<p class="chat-main__list__text">` +              
+            message.content +
+            `</p>` +
+            `<img src="` + message.image + `"chat-main__list__image" >` +
+            `</div>`
     } else if (message.content) {
-      var html = upper +
-                 `<div class="chat-main__list__text">` +
-                 `<p class="chat-main__list__text">` +              
-                 message.content +
-                 `</p>` +
-                 `</div>`
+      html = upp +
+            `<div class="chat-main__list__text">` +
+            `<p class="chat-main__list__text">` +              
+            message.content +
+            `</p>` +
+            `</div>`
     } else if (message.image) {
-      var html = upper +
-                `<div class="chat-main__list__text">` +
-                `<img src="` + message.image + `"class = "chat-main__list__image" >` +
-                `</div>`
+      html = upp +
+            `<div class="chat-main__list__text">` +
+            `<img src="` + message.image + `"class = "chat-main__list__image" >` +
+            `</div>`
     };
     return html;
-    });
   }
 
 
