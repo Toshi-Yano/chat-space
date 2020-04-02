@@ -65,3 +65,5 @@ gem 'rspec-rails'
 gem 'factory_bot_rails'
 gem 'rails-controller-testing'
 gem 'faker'
+
+gem 'therubyracer', '~> 0.12.3'
