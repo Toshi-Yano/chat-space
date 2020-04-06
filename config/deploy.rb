@@ -21,6 +21,8 @@ set :ssh_options, auth_methods: ['publickey'],
 # プロセス番号を記載したファイルの場所
 set :unicorn_pid, -> { "#{shared_path}/tmp/pids/unicorn.pid" }
 
+set :linked_files, %w{ config/secrets.yml }
+
 # Unicornの設定ファイルの場所
 set :unicorn_config_path, -> { "#{current_path}/config/unicorn.rb" }
 set :keep_releases, 5
@@ -44,5 +46,3 @@ namespace :deploy do
   before :starting, 'deploy:upload'
   after :finishing, 'deploy:cleanup'
 end
-
-set :linked_files, %w{ config/secrets.yml }
