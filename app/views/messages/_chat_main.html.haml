@@ -15,10 +15,11 @@
 
   .chat-main__form
     = form_for [@group, @message] do |f|
-      .chat-main__form__input
-        = f.text_field :content, class: 'input-message', placeholder: 'type a message'
-        .input-image
-          = f.label :image, class: 'input-image' do
-            = icon('fas', 'image')
-            = f.file_field :image, class: 'file-btn'
-      = f.submit 'send', class: 'submit-btn'
+      .chat-main__form__box
+        .chat-main__form__box__input
+          = f.text_field :content, class: 'input-message', placeholder: 'type a message'
+          .input-image
+            = f.label :image, class: 'input-image' do
+              = icon('fas', 'image')
+              = f.file_field :image, class: 'file-btn'
+          = f.submit 'Send', class: 'submit-btn'

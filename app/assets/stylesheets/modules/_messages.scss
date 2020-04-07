@@ -6,8 +6,8 @@ $pure-white: #ffffff;
 }
 
 .wrapper {
-  height: 100vh;
-  width: 100%;
+  // height: 100vh;
+  // width: 100%;
   display: flex;
   .chat-side {
     height: 100vh;
@@ -141,29 +141,28 @@ $pure-white: #ffffff;
     }
     
     &__form {
+      width: 100%;
       height: 90px;
       background-color: #d2d2d2;
-      form {
-        display: flex;
-        padding-top: 20px;
-        .chat-main__form__input {
+      &__box {
+        .chat-main__form__box__input {
           width: 100%;
+          padding-top: 20px;
           display: flex;
-          align-items: center;
           position: relative;
           .input-message {
             height: 50px;
-            width: 930px;
-            margin-left: 50px;
+            width: 82%;
+            margin-left: 40px;
             margin-right: 15px;
-            padding-right: 40px;
+            padding-right: 10px;
             padding-left: 10px;
             border-style: none;
           }
           .input-image {
             position: absolute;
-            right: 20px;
-            top: 4px;
+            right: 90px;
+            top: 13px;
             font-size: 25px;
             .file-btn {
               display: none;
@@ -174,9 +173,9 @@ $pure-white: #ffffff;
           display: block;
           height: 50px;
           width: 100px;
-          margin-right: 40px;
-          background-color: rgb(28, 153, 202);
+          background-color: #38AEEF;
           color: $pure-white;
+          margin-right: 15px;
         }
       }
     }
